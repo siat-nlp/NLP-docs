@@ -40,9 +40,9 @@ This repository aims to keep track of some practical and theoretical tricks in n
 
 
 ## Parameters
-* **1. Learning rate**: The learning rate is probably the most important hyperparameter to tune. A strategy used to select the hyperparameters is to randomly sample them (uniformly or logscale) and see the testing error after a few epoch.
+* **1. Learning rate**: The learning rate can be usually initialized as 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1(3x growing up). A strategy used to select the hyperparameters is to randomly sample them (uniformly or logscale) and see the testing error after a few epoch.
 
-* **2. Beam size**: ...
+* **2. Beam size**: Usually set from 2 to 10. The larger beam size, the higher computational cost.
 
 
 ## Regularization
@@ -65,9 +65,12 @@ This repository aims to keep track of some practical and theoretical tricks in n
 
 
 ## Programming in Tensorflow
-* **1. ```tf.variable_scope```/```tf.name_scope```**: ...
+* **1. ```tf.variable_scope```/```tf.name_scope```**: Both scopes have the same effect on all operations as well as variables, but *name scope* is ignored by ```tf.get_variable```. Suggest use ```tf.variable_scope``` in most cases. 
 
-* **2. Model Save/Restore**: ...
+  **Ref**: The difference between name scope and variable scope in tensorflow at [stackoverflow](https://stackoverflow.com/questions/35919020/whats-the-difference-of-name-scope-and-a-variable-scope-in-tensorflow).
+
+* **2. Model Save/Restore**: Usually, we create a helper ```saver = tf.train.Saver()``` to save and restore the whole model. However, if we want to use pre-trained model for fine-tuning or transfer learning, there are 2 ways: (1) Create the network by writing code to create each and every layer manually as the original model, and then use ```tf.train.Saver()``` to restore pre-trained model's checkpoint file. (2) Use ```.meta``` file and create the helper as ```saver = tf.train.import_meta_graph('xxx_model-xxx.meta')``` and then restore the pre-trained model. 
+  **Ref**: More details are in this [tutorial](https://cv-tricks.com/tensorflow-tutorial/save-restore-tensorflow-models-quick-complete-tutorial/).
 
 
 ## Programming in PyTorch
