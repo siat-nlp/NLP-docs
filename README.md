@@ -23,28 +23,33 @@ This repository aims to keep track of some practical and theoretical tricks in n
    * 2-4 layers seems generally enough. Deeper models with residual connections seems more difficult to converge (high variance). More tricks needs to be discovered.
    * ResD (dense residual connections) > Res (only connected to previous layer) > no residual connections
    * For encoder: Bidirectional > Unidirectional (reversed input) > Unidirectional
-   * Attention (additive) > Attention (multiplicative) > No attention. Authors suggest that attention act more as a skip connection mechanism than as a memory for the decoder
+   * Attention (additive) > Attention (multiplicative) > No attention. Authors suggest that attention act more as a skip connection mechanism than as a memory for the decoder.
 
   **Ref**: [Massive Exploration of Neural Machine Translation Architectures](https://arxiv.org/abs/1703.03906), Denny Britz, Anna Goldie et al.
 
 * **2. Seq2Seq**: For seq2seq, reverse the order of the input sequence (\['I', 'am', 'hungry'\] becomes \['hungry', 'am', 'I'\]). Keep the target sequence intact.
+
   **Why**: From the authors: "*This way, [...] that makes it easy for SGD to “establish communication” between the input and the output. We found this simple data transformation to greatly improve the performance of the LSTM.*"
+  
   **Ref**: [Sequence to Sequence Learning with Neural Networks](https://arxiv.org/abs/1409.3215), Ilya Sutskever et al.
 
 * **3. Char-RNN**: By training in an unsupervised way a network to predict the next character of a text (char-RNN), the network will learn a representation which can then be used for a supervised task (here sentiment analysis).
+
   **Ref**: [Learning to Generate Reviews and Discovering Sentiment](https://arxiv.org/abs/1704.01444), Ilya Sutskever et al.
 
 
 
 ## Parameters
 * **1. Learning rate**: The learning rate is probably the most important hyperparameter to tune. A strategy used to select the hyperparameters is to randomly sample them (uniformly or logscale) and see the testing error after a few epoch.
+
 * **2. Beam size**: ...
 
 
 ## Regularization
-* **1. Dropout**: To make Dropout works with RNN, it should only be applied on non-recurrent connections (between layers among a same timestep) [1]. Some more recent paper propose some tricks to make dropout works for recurrent connections [2].
+* **1. Dropout**: To make Dropout works with RNN, it should only be applied on non-recurrent connections (between layers among a same timestep) [1]. Some more recent paper propose some tricks to make dropout works for recurrent connections [2]. 
+
   **Ref**:
-    [1]. [Recurrent Neural Network Regularization](https://arxiv.org/abs/1409.2329), Wojciech Zaremba et al.
+    [1]. [Recurrent Neural Network Regularization](https://arxiv.org/abs/1409.2329), Wojciech Zaremba et al. </br>
     [2]. [Recurrent Dropout without Memory Loss](https://arxiv.org/abs/1603.05118), Stanislau Semeniuta et al.
 
 * **2. Batch normalization**: adding a new normalization layer. Some additional tricks for accelerating BN Networks:
@@ -70,18 +75,24 @@ This repository aims to keep track of some practical and theoretical tricks in n
 
 
 ## Reinforcement learning
-* **1. Asynchronous**: Train simultaneously multiple agents with different exploration policies (e.g., E-greedy with different values of epsilon) improve the robustness.
+* **1. Asynchronous**: Train simultaneously multiple agents with different exploration policies (e.g., E-greedy with different values of epsilon) improve the robustness. 
+
   **Ref**: [Asynchronous Methods for Deep Reinforcement Learning](https://arxiv.org/abs/1602.01783), V. Mnih.
 
-* **2. Skip frame**: Compute the action every 4 frames instead of every frames. For the other frames, repeat the action.
-  **Why**: Works well on Atari games, when the player reactivity doesn't need to be frame perfect. Using this trick allows to greatly speed up the training (About x4).
+* **2. Skip frame**: Compute the action every 4 frames instead of every frames. For the other frames, repeat the action. 
+
+  **Why**: Works well on Atari games, when the player reactivity doesn't need to be frame perfect. Using this trick allows to greatly speed up the training (About x4). 
+
   **Ref**: [Playing Atari with Deep Reinforcement Learning](https://arxiv.org/abs/1312.5602), V. Mnih.
 
-* **3. History**: Instead of only taking the current frame as input, stack the last frames together on a single input (size (h, w, c) with 1 grayscale frame by channel). Combined with a skip frame (repeat action) of 4, that means we would stack the frames t, t-4, t-8 and t-12.
-  **Why**: This allows the network to have some momentum information.
+* **3. History**: Instead of only taking the current frame as input, stack the last frames together on a single input (size (h, w, c) with 1 grayscale frame by channel). Combined with a skip frame (repeat action) of 4, that means we would stack the frames t, t-4, t-8 and t-12. 
+
+  **Why**: This allows the network to have some momentum information. 
+
   **Ref**: [Deep Reinforcement Learning with Double Q-learning](https://arxiv.org/abs/1509.06461), V. Mnih.
 
-* **4. Experience Replay**: Instead of updating every frames as the agent plays, to avoid correlations between the frames, it's better to sample a batch in the history of the transition taken (state, actionTaken, reward, nextState). This is basically the same idea as shuffling the dataset before training for supervised tasks. Some strategies exist to sample batches which contain more information (in the sense predicted reward different from real reward).
+* **4. Experience Replay**: Instead of updating every frames as the agent plays, to avoid correlations between the frames, it's better to sample a batch in the history of the transition taken (state, actionTaken, reward, nextState). This is basically the same idea as shuffling the dataset before training for supervised tasks. Some strategies exist to sample batches which contain more information (in the sense predicted reward different from real reward). 
+
   **Ref**: [Prioritized Experience Replay](https://arxiv.org/abs/1511.05952), Tom Schaul et al.
 
 * **5. PAAC (Parallel Advantage Actor Critic)**: It's possible to simplify the the A3C algorithm by batching the agent experiences and using a single model with synchronous updates.
