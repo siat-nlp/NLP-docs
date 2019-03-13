@@ -49,7 +49,7 @@ This repository aims to keep track of some practical and theoretical tricks in n
 * **1. Dropout**: To make Dropout works with RNN, it should only be applied on non-recurrent connections (between layers among a same timestep) [1]. Some more recent paper propose some tricks to make dropout works for recurrent connections [2]. 
 
   **Ref**:
-    [1]. [Recurrent Neural Network Regularization](https://arxiv.org/abs/1409.2329), Wojciech Zaremba et al. </br>
+    [1]. [Recurrent Neural Network Regularization](https://arxiv.org/abs/1409.2329), Wojciech Zaremba et al.</br>
     [2]. [Recurrent Dropout without Memory Loss](https://arxiv.org/abs/1603.05118), Stanislau Semeniuta et al.
 
 * **2. Batch normalization**: adding a new normalization layer. Some additional tricks for accelerating BN Networks:
@@ -95,6 +95,7 @@ This repository aims to keep track of some practical and theoretical tricks in n
 
   **Ref**: [Prioritized Experience Replay](https://arxiv.org/abs/1511.05952), Tom Schaul et al.
 
-* **5. PAAC (Parallel Advantage Actor Critic)**: It's possible to simplify the the A3C algorithm by batching the agent experiences and using a single model with synchronous updates.
+* **5. PAAC (Parallel Advantage Actor Critic)**: It's possible to simplify the the A3C algorithm by batching the agent experiences and using a single model with synchronous updates. 
+
   **Ref**: [Efficient Parallel Methods for Deep Reinforcement Learning](https://arxiv.org/abs/1705.04862v2), Alfredo V. Clemente et al.
 
