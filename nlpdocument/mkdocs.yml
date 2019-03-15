@@ -1,0 +1,39 @@
+site_name: SIAT NLP Docs
+repo_name: 'siat-nlp/NLP-DL-Tricks'
+repo_url: 'https://github.com/siat-nlp/NLP-DL-Tricks'
+copyright: 'Built and Collected by SIAT NLP Group'
+
+nav:
+  - Documentation:
+    - NLP & DL Tricks: index.md
+    - DL Framework Programming: dlFramework.md
+    - Useful Tutorials: tutorial.md
+  - Helper:
+    - How to contri?: helper/index.md
+
+theme: 
+  name: 'material'
+  logo: 'images/logo.svg'
+  favicon: 'images/favicon.png'
+  language: 'en'
+  palette:
+    primary: 'blue'
+    accent: 'blue'
+  feature:
+    tabs: true
+
+extra:
+  social:
+    - type: 'fas fa-home'
+      link: 'https://github.com/siat-nlp'
+    - type: 'github'
+      link: 'https://github.com/siat-nlp'
+  manifest: 'manifest.webmanifest'
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
