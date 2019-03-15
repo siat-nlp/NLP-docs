@@ -1,0 +1,868 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+    
+    
+      
+        <title>NLP & DL Tricks - SIAT NLP Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="manifest.webmanifest">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#nlp-dl-tricks" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="." title="SIAT NLP Docs" class="md-header-nav__button md-logo">
+          
+            <img src="images/logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              SIAT NLP Docs
+            </span>
+            <span class="md-header-nav__topic">
+              NLP & DL Tricks
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/siat-nlp/NLP-DL-Tricks/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    siat-nlp/NLP-DL-Tricks
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="." title="Documentation" class="md-tabs__link md-tabs__link--active">
+          Documentation
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="helper/" title="Helper" class="md-tabs__link">
+          Helper
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="." title="SIAT NLP Docs" class="md-nav__button md-logo">
+      
+        <img src="images/logo.svg" width="48" height="48">
+      
+    </a>
+    SIAT NLP Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/siat-nlp/NLP-DL-Tricks/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    siat-nlp/NLP-DL-Tricks
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        NLP & DL Tricks
+      </label>
+    
+    <a href="." title="NLP & DL Tricks" class="md-nav__link md-nav__link--active">
+      NLP & DL Tricks
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-prepossessing" title="Data prepossessing" class="md-nav__link">
+    Data prepossessing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-architecture" title="Network architecture" class="md-nav__link">
+    Network architecture
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seq2seq" title="Seq2Seq" class="md-nav__link">
+    Seq2Seq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#char-rnn" title="Char-RNN" class="md-nav__link">
+    Char-RNN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-rate" title="Learning rate" class="md-nav__link">
+    Learning rate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beam-size" title="Beam size" class="md-nav__link">
+    Beam size
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regularization" title="Regularization" class="md-nav__link">
+    Regularization
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dropout" title="Dropout" class="md-nav__link">
+    Dropout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-normalization" title="Batch normalization" class="md-nav__link">
+    Batch normalization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reinforcement-learning" title="Reinforcement learning" class="md-nav__link">
+    Reinforcement learning
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous" title="Asynchronous" class="md-nav__link">
+    Asynchronous
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skip-frame" title="Skip frame" class="md-nav__link">
+    Skip frame
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history" title="History" class="md-nav__link">
+    History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experience-replay" title="Experience Replay" class="md-nav__link">
+    Experience Replay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paac-parallel-advantage-actor-critic" title="PAAC (Parallel Advantage Actor Critic)" class="md-nav__link">
+    PAAC (Parallel Advantage Actor Critic)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="dlFramework/" title="DL Framework Programming" class="md-nav__link">
+      DL Framework Programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorial/" title="Useful Tutorials" class="md-nav__link">
+      Useful Tutorials
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Helper
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Helper
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="helper/" title="How to contri?" class="md-nav__link">
+      How to contri?
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-prepossessing" title="Data prepossessing" class="md-nav__link">
+    Data prepossessing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-architecture" title="Network architecture" class="md-nav__link">
+    Network architecture
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seq2seq" title="Seq2Seq" class="md-nav__link">
+    Seq2Seq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#char-rnn" title="Char-RNN" class="md-nav__link">
+    Char-RNN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-rate" title="Learning rate" class="md-nav__link">
+    Learning rate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beam-size" title="Beam size" class="md-nav__link">
+    Beam size
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regularization" title="Regularization" class="md-nav__link">
+    Regularization
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dropout" title="Dropout" class="md-nav__link">
+    Dropout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-normalization" title="Batch normalization" class="md-nav__link">
+    Batch normalization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reinforcement-learning" title="Reinforcement learning" class="md-nav__link">
+    Reinforcement learning
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous" title="Asynchronous" class="md-nav__link">
+    Asynchronous
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skip-frame" title="Skip frame" class="md-nav__link">
+    Skip frame
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history" title="History" class="md-nav__link">
+    History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experience-replay" title="Experience Replay" class="md-nav__link">
+    Experience Replay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paac-parallel-advantage-actor-critic" title="PAAC (Parallel Advantage Actor Critic)" class="md-nav__link">
+    PAAC (Parallel Advantage Actor Critic)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/siat-nlp/NLP-DL-Tricks/edit/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="nlp-dl-tricks">NLP &amp; DL Tricks<a class="headerlink" href="#nlp-dl-tricks" title="Permanent link">&para;</a></h1>
+<p>This repository aims to keep track of some practical and theoretical tricks in natural language processing (NLP) / deep learning / machine learning, etc. Most of these tricks are summarized by members of our group, while some others are borrowed from open-source sites.</p>
+<h2 id="data-prepossessing">Data prepossessing<a class="headerlink" href="#data-prepossessing" title="Permanent link">&para;</a></h2>
+<h2 id="network-architecture">Network architecture<a class="headerlink" href="#network-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="seq2seq">Seq2Seq<a class="headerlink" href="#seq2seq" title="Permanent link">&para;</a></h3>
+<p>Some tricks to train RNN and seq2seq models:</p>
+<ul>
+<li>Embedding size: 1024 or 512. Lower dimensionality like 256 can also lead to good performances. Higher does not necessarily lead to better performances.</li>
+<li>For the decoder: LSTM &gt; GRU &gt; Vanilla-RNN</li>
+<li>2-4 layers seems generally enough. Deeper models with residual connections seems more difficult to converge (high variance). More tricks needs to be discovered.</li>
+<li>ResD (dense residual connections) &gt; Res (only connected to previous layer) &gt; no residual connections</li>
+<li>For encoder: Bidirectional &gt; Unidirectional (reversed input) &gt; Unidirectional</li>
+<li>Attention (additive) &gt; Attention (multiplicative) &gt; No attention. Authors suggest that attention act more as a skip connection mechanism than as a memory for the decoder.</li>
+</ul>
+<blockquote>
+<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1703.03906">Massive Exploration of Neural Machine Translation Architectures</a>, Denny Britz, Anna Goldie et al.</p>
+</blockquote>
+<p>For seq2seq, reverse the order of the input sequence (['I', 'am', 'hungry'] becomes ['hungry', 'am', 'I']). Keep the target sequence intact.</p>
+<blockquote>
+<p><strong>Why</strong>: From the authors: "<em>This way, [...] that makes it easy for SGD to “establish communication” between the input and the output. We found this simple data transformation to greatly improve the performance of the LSTM.</em>"</p>
+<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1409.3215">Sequence to Sequence Learning with Neural Networks</a>, Ilya Sutskever et al.</p>
+</blockquote>
+<h3 id="char-rnn">Char-RNN<a class="headerlink" href="#char-rnn" title="Permanent link">&para;</a></h3>
+<p>By training in an unsupervised way a network to predict the next character of a text (char-RNN), the network will learn a representation which can then be used for a supervised task (here sentiment analysis).</p>
+<blockquote>
+<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1704.01444">Learning to Generate Reviews and Discovering Sentiment</a>, Ilya Sutskever et al.</p>
+</blockquote>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<h3 id="learning-rate">Learning rate<a class="headerlink" href="#learning-rate" title="Permanent link">&para;</a></h3>
+<p>The learning rate can be usually initialized as 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1(3x growing up). A strategy used to select the hyperparameters is to randomly sample them (uniformly or logscale) and see the testing error after a few epoch.</p>
+<h3 id="beam-size">Beam size<a class="headerlink" href="#beam-size" title="Permanent link">&para;</a></h3>
+<p>Usually set from 2 to 10. The larger beam size, the higher computational cost.</p>
+<h2 id="regularization">Regularization<a class="headerlink" href="#regularization" title="Permanent link">&para;</a></h2>
+<h3 id="dropout">Dropout<a class="headerlink" href="#dropout" title="Permanent link">&para;</a></h3>
+<p>To make Dropout works with RNN, it should only be applied on non-recurrent connections (between layers among a same timestep) [1]. Some more recent paper propose some tricks to make dropout works for recurrent connections[2].</p>
+<blockquote>
+<p><strong>Ref</strong>:
+    [1]. <a href="https://arxiv.org/abs/1409.2329">Recurrent Neural Network Regularization</a>, Wojciech Zaremba et al.</br>
+    [2]. <a href="https://arxiv.org/abs/1603.05118">Recurrent Dropout without Memory Loss</a>, Stanislau Semeniuta et al.</p>
+</blockquote>
+<h3 id="batch-normalization">Batch normalization<a class="headerlink" href="#batch-normalization" title="Permanent link">&para;</a></h3>
+<p>adding a new normalization layer. Some additional tricks for accelerating BN Networks:
+   * Increase the learning rate
+   * Remove/reduce Dropout: speeds up training, without increasing overfitting
+   * Remove/Reduce the L2 weight regularization
+   * Accelerate the learning rate decay: because the network trains faster
+   * Remove Local Response Normalization
+   * Shuffle training examples more thoroughly: prevents the same examples from always appearing in a mini-batch together. (The authors speak about 1% improvements in the validation)
+   * Reduce the photometric distortions</p>
+<blockquote>
+<p><strong>Why</strong>: Some good explanation at <a href="https://www.quora.com/Why-does-batch-normalization-help">Quora</a>.</p>
+</blockquote>
+<h2 id="reinforcement-learning">Reinforcement learning<a class="headerlink" href="#reinforcement-learning" title="Permanent link">&para;</a></h2>
+<h3 id="asynchronous">Asynchronous<a class="headerlink" href="#asynchronous" title="Permanent link">&para;</a></h3>
+<p>Train simultaneously multiple agents with different exploration policies (e.g., E-greedy with different values of epsilon) improve the robustness. </p>
+<blockquote>
+<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1602.01783">Asynchronous Methods for Deep Reinforcement Learning</a>, V. Mnih.</p>
+</blockquote>
+<h3 id="skip-frame">Skip frame<a class="headerlink" href="#skip-frame" title="Permanent link">&para;</a></h3>
+<p>Compute the action every 4 frames instead of every frames. For the other frames, repeat the action. </p>
+<blockquote>
+<p><strong>Why</strong>: Works well on Atari games, when the player reactivity doesn't need to be frame perfect. Using this trick allows to greatly speed up the training (About x4). </p>
+<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1312.5602">Playing Atari with Deep Reinforcement Learning</a>, V. Mnih.</p>
+</blockquote>
+<h3 id="history">History<a class="headerlink" href="#history" title="Permanent link">&para;</a></h3>
+<p>Instead of only taking the current frame as input, stack the last frames together on a single input (size (h, w, c) with 1 grayscale frame by channel). Combined with a skip frame (repeat action) of 4, that means we would stack the frames t, t-4, t-8 and t-12. </p>
+<blockquote>
+<p><strong>Why</strong>: This allows the network to have some momentum information. </p>
+<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1509.06461">Deep Reinforcement Learning with Double Q-learning</a>, V. Mnih.</p>
+</blockquote>
+<h3 id="experience-replay">Experience Replay<a class="headerlink" href="#experience-replay" title="Permanent link">&para;</a></h3>
+<p>Instead of updating every frames as the agent plays, to avoid correlations between the frames, it's better to sample a batch in the history of the transition taken (state, actionTaken, reward, nextState). This is basically the same idea as shuffling the dataset before training for supervised tasks. Some strategies exist to sample batches which contain more information (in the sense predicted reward different from real reward). </p>
+<blockquote>
+<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1511.05952">Prioritized Experience Replay</a>, Tom Schaul et al.</p>
+</blockquote>
+<h3 id="paac-parallel-advantage-actor-critic">PAAC (Parallel Advantage Actor Critic)<a class="headerlink" href="#paac-parallel-advantage-actor-critic" title="Permanent link">&para;</a></h3>
+<p>It's possible to simplify the the A3C algorithm by batching the agent experiences and using a single model with synchronous updates. </p>
+<blockquote>
+<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1705.04862v2">Efficient Parallel Methods for Deep Reinforcement Learning</a>, Alfredo V. Clemente et al.</p>
+</blockquote>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="dlFramework/" title="DL Framework Programming" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                DL Framework Programming
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Built and Collected by SIAT NLP Group
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/siat-nlp" class="md-footer-social__link fa fa-fas fa-home"></a>
+    
+      <a href="https://github.com/siat-nlp" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.d9aa80ab.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      
+    
+  </body>
+</html>
