@@ -2,7 +2,7 @@ site_name: SIAT NLP Docs
 repo_name: 'siat-nlp/NLP-DL-Tricks'
 repo_url: 'https://github.com/siat-nlp/NLP-DL-Tricks/'
 copyright: 'Built and Collected by SIAT NLP Group'
-edit_uri: 'tree/master/nlpdocument/docs'
+edit_uri: 'tree/edit/nlpdocument/docs'
 
 nav:
   - Documentation:
