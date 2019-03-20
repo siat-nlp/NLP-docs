@@ -2,7 +2,7 @@ site_name: SIAT NLP Docs
 repo_name: 'siat-nlp/NLP-DL-Tricks'
 repo_url: 'https://github.com/siat-nlp/NLP-DL-Tricks/'
 copyright: 'Built and Collected by SIAT NLP Group'
-edit_uri: 'tree/master/nlpdocument/docs'
+edit_uri: 'tree/edit/nlpdocument/docs'
 
 nav:
   - Documentation:
@@ -18,8 +18,8 @@ theme:
   favicon: 'images/favicon.png'
   language: 'en'
   palette:
-    primary: 'blue'
-    accent: 'blue'
+    primary: 'indigo'
+    accent: 'indigo'
   feature:
     tabs: true
 
@@ -28,7 +28,7 @@ extra:
     - type: 'fas fa-home'
       link: 'https://github.com/siat-nlp'
     - type: 'github'
-      link: 'https://github.com/siat-nlp'
+      link: 'https://github.com/siat-nlp/docs'
   manifest: 'manifest.webmanifest'
 
 markdown_extensions:
