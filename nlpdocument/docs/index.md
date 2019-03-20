@@ -94,3 +94,6 @@ Instead of updating every frames as the agent plays, to avoid correlations betwe
 It's possible to simplify the the A3C algorithm by batching the agent experiences and using a single model with synchronous updates. 
 
 > **Ref**: [Efficient Parallel Methods for Deep Reinforcement Learning](https://arxiv.org/abs/1705.04862v2), Alfredo V. Clemente et al.
+
+
+no
