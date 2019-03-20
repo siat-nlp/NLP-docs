@@ -1,4 +1,4 @@
-# NLP & DL Tricks
+# NLP and Deep Learning Tricks
 This repository aims to keep track of some practical and theoretical tricks in natural language processing (NLP) / deep learning / machine learning, etc. Most of these tricks are summarized by members of our group, while some others are borrowed from open-source sites.
 
 
