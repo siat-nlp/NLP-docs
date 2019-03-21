@@ -26,7 +26,7 @@ For seq2seq, reverse the order of the input sequence (\['I', 'am', 'hungry'\] be
 
 > **Why**: From the authors: "*This way, [...] that makes it easy for SGD to “establish communication” between the input and the output. We found this simple data transformation to greatly improve the performance of the LSTM.*"
   
-> **Ref**: [Sequence to Sequence Learning with Neural Networks](https://arxiv.org/abs/1409.3215), Ilya Sutskever et al.
+> **Ref**: [Se quence to Sequence Learning with Neural Networks](https://arxiv.org/abs/1409.3215), Ilya Sutskever et al.
 
 ### Char-RNN 
 By training in an unsupervised way a network to predict the next character of a text (char-RNN), the network will learn a representation which can then be used for a supervised task (here sentiment analysis).
