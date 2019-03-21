@@ -14,3 +14,7 @@ Usually, we create a helper ```saver = tf.train.Saver()``` to save and restore t
 
 
 ## Programming in PyTorch
+### CUDA out of memory
+When ```RuntimeError: CUDA out of memory``` occurs, usually (1) check if exists too large tensors in computation graph; (2) downsize the batch size; (3) or use multiple GPUs to train. Note to split batch size when using ```nn.DataParallel```. 
+
+> **Ref**: Some other details are in this [debug log](https://docs.google.com/document/d/1Cpxs-aZcydqCzTEvfW-62ja6ZDhx2QEXR-f5HKmbeig/edit?usp=sharing).
