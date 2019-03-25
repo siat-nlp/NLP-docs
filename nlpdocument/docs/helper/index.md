@@ -11,20 +11,29 @@
 
 ![网页修改入口](img/01.png)
 
-点击这个铅笔按钮，
-```python
-import numpy as np
+点击这个铅笔按钮，可以看到我们跳转到了这个页面的md文件（见下图）。本网站使用了mkdocs进行文档的生成，因此我们只需编辑对应页面的md文件即可修改对应文档中的内容。
+
+![](img/02.png)
+
+我们点击上图中红框位置处的铅笔按钮，若提示你没有登录无法点击则需要使用GitHub账号进行登录，登录后即可点击该铅笔状按钮。此时将进入到md文件修改的页面（见下图）。
+
+![](img/03.png)
+
+进行文件编写时你必须使用md文件支持的markdown语法，有关markdown的基本语法可以参考前文中的已经存在的代码，相信聪明的你思考片刻就可以进行模仿编写了🤣，如果你需要一些参考资料可以查看[Markdown 语法说明](https://www.appinn.com/markdown/)。
+
+我们做一些简单的更改，在文件末尾添加以下一段代码：
+```
+!!! bug
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
+
+    https://squidfunk.github.io/mkdocs-material/extensions/codehilite/#installation
+
+    https://squidfunk.github.io/mkdocs-material/extensions/admonition/
 ```
 
-dog | bird | cat
-----|------|----
-foo | foo  | foo
-bar | bar  | bar
-baz | baz  | baz
-
-$$
-\frac{n!}{k!(n-k)!} = \binom{n}{k}
-$$
+它的效果如下：
 
 !!! bug
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
@@ -35,9 +44,17 @@ $$
 
     https://squidfunk.github.io/mkdocs-material/extensions/admonition/
 
+可以看到，使用markdown语言可以轻松地编写出美观的文档，点击页面的 **Preview Changes** 可以直接看到修改的结果，方便我们查看是否存在语法错误。值得注意的是，本文档还支持markdown拓展功能，可以使用诸如：数学公式、语法高亮，高亮标注等等原生markdown不支持的功能，有关这一部分的详细内容请参考[Element](element.md)。
 
+当我们修改完成后，需要进行提交修改。滚动页面至底部，可以看到 **Propose file change** ，根据你的修改内容填写对应的描述，如下图所示。
 
+![](img/06.png)
 
+随后点击提交 **Propose file change** ，我们将会进入到最终的提交页面。
+
+![](img/07.png)
+
+在页面下方查看我们的修改无误后，点击 **Create pull request** ，将会把我们的修改内容汇报至文档编辑所在的仓库中。编辑部会进行内容的审核，一旦审核通过你很快就会在网页上看到你的贡献了！为了让我们编写的文档更加统一，我们还设定了一些文档的编写范式，可以进入[Writing Paradigm](Writingparadigm.md)进行查看。
 
 ## 在文档中新建页面
 ### 预备条件
