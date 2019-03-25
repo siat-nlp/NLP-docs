@@ -1,6 +1,6 @@
 site_name: SIAT NLP Docs
 repo_name: 'siat-nlp/NLP-DL-Tricks'
-repo_url: 'https://github.com/siat-nlp/NLP-DL-Tricks/'
+repo_url: 'https://github.com/jhliu17/NLP-DL-Tricks/'
 copyright: 'Built and Collected by SIAT NLP Group'
 edit_uri: 'tree/edit/nlpdocument/docs'
 
@@ -9,8 +9,9 @@ nav:
     - NLP & DL Tricks: index.md
     - DL Framework Programming: dlFramework.md
     - Useful Tutorials: tutorial.md
-  - Helper:
-    - How to share your idea?: helper/index.md
+  - About:
+    - Writing Tutorial: helper/index.md
+    - Element: helper/element.md
 
 theme: 
   name: 'material'
@@ -18,8 +19,8 @@ theme:
   favicon: 'images/favicon.png'
   language: 'en'
   palette:
-    primary: 'blue'
-    accent: 'blue'
+    primary: 'indigo'
+    accent: 'indigo'
   feature:
     tabs: true
 
@@ -28,7 +29,7 @@ extra:
     - type: 'fas fa-home'
       link: 'https://github.com/siat-nlp'
     - type: 'github'
-      link: 'https://github.com/siat-nlp'
+      link: 'https://github.com/siat-nlp/docs'
   manifest: 'manifest.webmanifest'
 
 markdown_extensions:
@@ -36,5 +37,25 @@ markdown_extensions:
   - footnotes
   - codehilite:
       guess_lang: false
+      linenums: true
   - toc:
       permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.progressbar
+
+extra_javascript:
+- 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
