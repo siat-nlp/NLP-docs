@@ -10,7 +10,7 @@ nav:
     - DL Framework Programming: dlFramework.md
     - Useful Tutorials: tutorial.md
   - About:
-    - Writing tutorial: helper/index.md
+    - Writing Tutorial: helper/index.md
     - Element: helper/element.md
 
 theme: 

@@ -220,8 +220,8 @@
   
     <li class="md-tabs__item">
       
-        <a href="helper/" title="Helper" class="md-tabs__link">
-          Helper
+        <a href="helper/" title="About" class="md-tabs__link">
+          About
         </a>
       
     </li>
@@ -510,11 +510,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      Helper
+      About
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        Helper
+        About
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -525,8 +525,20 @@
 
 
   <li class="md-nav__item">
-    <a href="helper/" title="How to share your idea?" class="md-nav__link">
-      How to share your idea?
+    <a href="helper/" title="Writing tutorial" class="md-nav__link">
+      Writing tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="helper/element/" title="Element" class="md-nav__link">
+      Element
     </a>
   </li>
 
@@ -725,19 +737,25 @@
 <li>For encoder: Bidirectional &gt; Unidirectional (reversed input) &gt; Unidirectional</li>
 <li>Attention (additive) &gt; Attention (multiplicative) &gt; No attention. Authors suggest that attention act more as a skip connection mechanism than as a memory for the decoder.</li>
 </ul>
-<blockquote>
-<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1703.03906">Massive Exploration of Neural Machine Translation Architectures</a>, Denny Britz, Anna Goldie et al.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Ref</p>
+<p><a href="https://arxiv.org/abs/1703.03906">Massive Exploration of Neural Machine Translation Architectures</a>, Denny Britz, Anna Goldie et al.</p>
+</div>
 <p>For seq2seq, reverse the order of the input sequence (['I', 'am', 'hungry'] becomes ['hungry', 'am', 'I']). Keep the target sequence intact.</p>
-<blockquote>
-<p><strong>Why</strong>: From the authors: "<em>This way, [...] that makes it easy for SGD to “establish communication” between the input and the output. We found this simple data transformation to greatly improve the performance of the LSTM.</em>"</p>
-<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1409.3215">Sequence to Sequence Learning with Neural Networks</a>, Ilya Sutskever et al.</p>
-</blockquote>
+<div class="admonition question">
+<p class="admonition-title">Why</p>
+<p>From the authors: "<em>This way, [...] that makes it easy for SGD to “establish communication” between the input and the output. We found this simple data transformation to greatly improve the performance of the LSTM.</em>"</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Ref</p>
+<p><a href="https://arxiv.org/abs/1409.3215">Sequence to Sequence Learning with Neural Networks</a>, Ilya Sutskever et al.</p>
+</div>
 <h3 id="char-rnn">Char-RNN<a class="headerlink" href="#char-rnn" title="Permanent link">&para;</a></h3>
 <p>By training in an unsupervised way a network to predict the next character of a text (char-RNN), the network will learn a representation which can then be used for a supervised task (here sentiment analysis).</p>
-<blockquote>
-<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1704.01444">Learning to Generate Reviews and Discovering Sentiment</a>, Ilya Sutskever et al.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Ref</p>
+<p><a href="https://arxiv.org/abs/1704.01444">Learning to Generate Reviews and Discovering Sentiment</a>, Ilya Sutskever et al.</p>
+</div>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <h3 id="learning-rate">Learning rate<a class="headerlink" href="#learning-rate" title="Permanent link">&para;</a></h3>
 <p>The learning rate can be usually initialized as 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1(3x growing up). A strategy used to select the hyperparameters is to randomly sample them (uniformly or logscale) and see the testing error after a few epoch.</p>
@@ -746,11 +764,11 @@
 <h2 id="regularization">Regularization<a class="headerlink" href="#regularization" title="Permanent link">&para;</a></h2>
 <h3 id="dropout">Dropout<a class="headerlink" href="#dropout" title="Permanent link">&para;</a></h3>
 <p>To make Dropout works with RNN, it should only be applied on non-recurrent connections (between layers among a same timestep) [1]. Some more recent paper propose some tricks to make dropout works for recurrent connections[2].</p>
-<blockquote>
-<p><strong>Ref</strong>:
-    [1]. <a href="https://arxiv.org/abs/1409.2329">Recurrent Neural Network Regularization</a>, Wojciech Zaremba et al.</br>
-    [2]. <a href="https://arxiv.org/abs/1603.05118">Recurrent Dropout without Memory Loss</a>, Stanislau Semeniuta et al.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Ref</p>
+<p>[1]. <a href="https://arxiv.org/abs/1409.2329">Recurrent Neural Network Regularization</a>, Wojciech Zaremba et al.</br>
+[2]. <a href="https://arxiv.org/abs/1603.05118">Recurrent Dropout without Memory Loss</a>, Stanislau Semeniuta et al.</p>
+</div>
 <h3 id="batch-normalization">Batch normalization<a class="headerlink" href="#batch-normalization" title="Permanent link">&para;</a></h3>
 <p>adding a new normalization layer. Some additional tricks for accelerating BN Networks:
    * Increase the learning rate
@@ -760,37 +778,49 @@
    * Remove Local Response Normalization
    * Shuffle training examples more thoroughly: prevents the same examples from always appearing in a mini-batch together. (The authors speak about 1% improvements in the validation)
    * Reduce the photometric distortions</p>
-<blockquote>
-<p><strong>Why</strong>: Some good explanation at <a href="https://www.quora.com/Why-does-batch-normalization-help">Quora</a>.</p>
-</blockquote>
+<div class="admonition question">
+<p class="admonition-title">Why</p>
+<p>Some good explanation at <a href="https://www.quora.com/Why-does-batch-normalization-help">Quora</a>.</p>
+</div>
 <h2 id="reinforcement-learning">Reinforcement learning<a class="headerlink" href="#reinforcement-learning" title="Permanent link">&para;</a></h2>
 <h3 id="asynchronous">Asynchronous<a class="headerlink" href="#asynchronous" title="Permanent link">&para;</a></h3>
 <p>Train simultaneously multiple agents with different exploration policies (e.g., E-greedy with different values of epsilon) improve the robustness. </p>
-<blockquote>
-<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1602.01783">Asynchronous Methods for Deep Reinforcement Learning</a>, V. Mnih.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Ref</p>
+<p><a href="https://arxiv.org/abs/1602.01783">Asynchronous Methods for Deep Reinforcement Learning</a>, V. Mnih.</p>
+</div>
 <h3 id="skip-frame">Skip frame<a class="headerlink" href="#skip-frame" title="Permanent link">&para;</a></h3>
 <p>Compute the action every 4 frames instead of every frames. For the other frames, repeat the action. </p>
-<blockquote>
-<p><strong>Why</strong>: Works well on Atari games, when the player reactivity doesn't need to be frame perfect. Using this trick allows to greatly speed up the training (About x4). </p>
-<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1312.5602">Playing Atari with Deep Reinforcement Learning</a>, V. Mnih.</p>
-</blockquote>
+<div class="admonition question">
+<p class="admonition-title">Why</p>
+<p>Works well on Atari games, when the player reactivity doesn't need to be frame perfect. Using this trick allows to greatly speed up the training (About x4). </p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Ref</p>
+<p><a href="https://arxiv.org/abs/1312.5602">Playing Atari with Deep Reinforcement Learning</a>, V. Mnih.</p>
+</div>
 <h3 id="history">History<a class="headerlink" href="#history" title="Permanent link">&para;</a></h3>
 <p>Instead of only taking the current frame as input, stack the last frames together on a single input (size (h, w, c) with 1 grayscale frame by channel). Combined with a skip frame (repeat action) of 4, that means we would stack the frames t, t-4, t-8 and t-12. </p>
-<blockquote>
-<p><strong>Why</strong>: This allows the network to have some momentum information. </p>
-<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1509.06461">Deep Reinforcement Learning with Double Q-learning</a>, V. Mnih.</p>
-</blockquote>
+<div class="admonition question">
+<p class="admonition-title">Why</p>
+<p>This allows the network to have some momentum information. </p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Ref</p>
+<p><a href="https://arxiv.org/abs/1509.06461">Deep Reinforcement Learning with Double Q-learning</a>, V. Mnih.</p>
+</div>
 <h3 id="experience-replay">Experience Replay<a class="headerlink" href="#experience-replay" title="Permanent link">&para;</a></h3>
 <p>Instead of updating every frames as the agent plays, to avoid correlations between the frames, it's better to sample a batch in the history of the transition taken (state, actionTaken, reward, nextState). This is basically the same idea as shuffling the dataset before training for supervised tasks. Some strategies exist to sample batches which contain more information (in the sense predicted reward different from real reward). </p>
-<blockquote>
-<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1511.05952">Prioritized Experience Replay</a>, Tom Schaul et al.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Ref</p>
+<p><a href="https://arxiv.org/abs/1511.05952">Prioritized Experience Replay</a>, Tom Schaul et al.</p>
+</div>
 <h3 id="paac-parallel-advantage-actor-critic">PAAC (Parallel Advantage Actor Critic)<a class="headerlink" href="#paac-parallel-advantage-actor-critic" title="Permanent link">&para;</a></h3>
 <p>It's possible to simplify the the A3C algorithm by batching the agent experiences and using a single model with synchronous updates. </p>
-<blockquote>
-<p><strong>Ref</strong>: <a href="https://arxiv.org/abs/1705.04862v2">Efficient Parallel Methods for Deep Reinforcement Learning</a>, Alfredo V. Clemente et al.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Ref</p>
+<p><a href="https://arxiv.org/abs/1705.04862v2">Efficient Parallel Methods for Deep Reinforcement Learning</a>, Alfredo V. Clemente et al.</p>
+</div>
                 
                   
                 
@@ -862,6 +892,8 @@
       <script src="assets/javascripts/application.d9aa80ab.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>
