@@ -37,6 +37,7 @@ By training in an unsupervised way a network to predict the next character of a 
 
 
 
+
 ## Parameters
 ### Learning rate
 The learning rate can be usually initialized as 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1(3x growing up). A strategy used to select the hyperparameters is to randomly sample them (uniformly or logscale) and see the testing error after a few epoch.
