@@ -20,8 +20,8 @@ theme:
   favicon: 'images/favicon.png'
   language: 'en'
   palette:
-    primary: 'blue'
-    accent: 'blue'
+    primary: 'indigo'
+    accent: 'indigo'
   feature:
     tabs: true
 
