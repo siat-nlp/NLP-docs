@@ -7,11 +7,18 @@ edit_uri: 'tree/edit/nlpdocument/docs'
 nav:
   - Documentation:
     - NLP and DL Tricks: index.md
-    - DL Framework Programming: dlFramework.md
+    - DL Framework Programming: dl_framework.md
     - Useful Tutorials: tutorial.md
+  - Baselines:
+    - Answer Selection: baselines/answer_selection.md
+    - Aspect Sentiment Analysis: baselines/aspect.md
+    - Dialogue: baselines/dialogue.md
+    - Summarization: baselines/summarization.md
+    - Captioning: baselines/captioning.md
+    - Question Answering: baselines/question_answering.md
   - About:
     - Writing Tutorial: helper/index.md
-    - Writing Paradigm: helper/Writingparadigm.md
+    - Writing Paradigm: helper/writing_paradigm.md
     - Element: helper/element.md
 
 theme: 

@@ -220,6 +220,19 @@
   
     <li class="md-tabs__item">
       
+        <a href="baselines/answer_selection/" title="Baselines" class="md-tabs__link">
+          Baselines
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
         <a href="helper/" title="About" class="md-tabs__link">
           About
         </a>
@@ -477,7 +490,7 @@
 
 
   <li class="md-nav__item">
-    <a href="dlFramework/" title="DL Framework Programming" class="md-nav__link">
+    <a href="dl_framework/" title="DL Framework Programming" class="md-nav__link">
       DL Framework Programming
     </a>
   </li>
@@ -510,10 +523,106 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      About
+      Baselines
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
+        Baselines
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="baselines/answer_selection/" title="Answer Selection" class="md-nav__link">
+      Answer Selection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="baselines/aspect/" title="Aspect Sentiment Analysis" class="md-nav__link">
+      Aspect Sentiment Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="baselines/dialogue/" title="Dialogue" class="md-nav__link">
+      Dialogue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="baselines/summarization/" title="Summarization" class="md-nav__link">
+      Summarization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="baselines/captioning/" title="Captioning" class="md-nav__link">
+      Captioning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="baselines/question_answering/" title="Question Answering" class="md-nav__link">
+      Question Answering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
         About
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -537,7 +646,7 @@
 
 
   <li class="md-nav__item">
-    <a href="helper/Writingparadigm/" title="Writing Paradigm" class="md-nav__link">
+    <a href="helper/writing_paradigm/" title="Writing Paradigm" class="md-nav__link">
       Writing Paradigm
     </a>
   </li>
@@ -738,10 +847,6 @@
                 <h1 id="nlp-and-deep-learning-tricks">NLP and Deep Learning Tricks<a class="headerlink" href="#nlp-and-deep-learning-tricks" title="Permanent link">&para;</a></h1>
 <p>This repository aims to keep track of some practical and theoretical tricks in natural language processing (NLP) / deep learning / machine learning, etc. Most of these tricks are summarized by members of our group, while some others are borrowed from open-source sites.</p>
 <h2 id="data-prepossessing">Data prepossessing<a class="headerlink" href="#data-prepossessing" title="Permanent link">&para;</a></h2>
-<p><br />
-<br />
-<br />
-<br /></p>
 <h2 id="network-architecture">Network architecture<a class="headerlink" href="#network-architecture" title="Permanent link">&para;</a></h2>
 <h3 id="seq2seq"><strong>Seq2Seq</strong><a class="headerlink" href="#seq2seq" title="Permanent link">&para;</a></h3>
 <p>Some tricks to train RNN and seq2seq models:</p>
@@ -773,19 +878,11 @@
 <p class="admonition-title">Ref</p>
 <p><a href="https://arxiv.org/abs/1704.01444">Learning to Generate Reviews and Discovering Sentiment</a>, Ilya Sutskever et al.</p>
 </div>
-<p><br />
-<br />
-<br />
-<br /></p>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <h3 id="learning-rate">Learning rate<a class="headerlink" href="#learning-rate" title="Permanent link">&para;</a></h3>
 <p>The learning rate can be usually initialized as 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1(3x growing up). A strategy used to select the hyperparameters is to randomly sample them (uniformly or logscale) and see the testing error after a few epoch.</p>
 <h3 id="beam-size">Beam size<a class="headerlink" href="#beam-size" title="Permanent link">&para;</a></h3>
 <p>Usually set from 2 to 10. The larger beam size, the higher computational cost.</p>
-<p><br />
-<br />
-<br />
-<br /></p>
 <h2 id="regularization">Regularization<a class="headerlink" href="#regularization" title="Permanent link">&para;</a></h2>
 <h3 id="dropout">Dropout<a class="headerlink" href="#dropout" title="Permanent link">&para;</a></h3>
 <p>To make Dropout works with RNN, it should only be applied on non-recurrent connections (between layers among a same timestep) [1]. Some more recent paper propose some tricks to make dropout works for recurrent connections[2].</p>
@@ -807,10 +904,6 @@
 <p class="admonition-title">Why</p>
 <p>Some good explanation at <a href="https://www.quora.com/Why-does-batch-normalization-help">Quora</a>.</p>
 </div>
-<p><br />
-<br />
-<br />
-<br /></p>
 <h2 id="reinforcement-learning">Reinforcement learning<a class="headerlink" href="#reinforcement-learning" title="Permanent link">&para;</a></h2>
 <h3 id="asynchronous">Asynchronous<a class="headerlink" href="#asynchronous" title="Permanent link">&para;</a></h3>
 <p>Train simultaneously multiple agents with different exploration policies (e.g., E-greedy with different values of epsilon) improve the robustness. </p>
@@ -871,7 +964,7 @@
       <nav class="md-footer-nav__inner md-grid">
         
         
-          <a href="dlFramework/" title="DL Framework Programming" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="dl_framework/" title="DL Framework Programming" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">

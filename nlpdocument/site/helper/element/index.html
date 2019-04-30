@@ -220,6 +220,19 @@
   
     <li class="md-tabs__item">
       
+        <a href="../../baselines/answer_selection/" title="Baselines" class="md-tabs__link">
+          Baselines
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
         <a href="../" title="About" class="md-tabs__link md-tabs__link--active">
           About
         </a>
@@ -308,7 +321,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../dlFramework/" title="DL Framework Programming" class="md-nav__link">
+    <a href="../../dl_framework/" title="DL Framework Programming" class="md-nav__link">
       DL Framework Programming
     </a>
   </li>
@@ -335,18 +348,114 @@
       
       
 
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Baselines
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Baselines
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../baselines/answer_selection/" title="Answer Selection" class="md-nav__link">
+      Answer Selection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../baselines/aspect/" title="Aspect Sentiment Analysis" class="md-nav__link">
+      Aspect Sentiment Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../baselines/dialogue/" title="Dialogue" class="md-nav__link">
+      Dialogue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../baselines/summarization/" title="Summarization" class="md-nav__link">
+      Summarization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../baselines/captioning/" title="Captioning" class="md-nav__link">
+      Captioning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../baselines/question_answering/" title="Question Answering" class="md-nav__link">
+      Question Answering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
-    <label class="md-nav__link" for="nav-2">
+    <label class="md-nav__link" for="nav-3">
       About
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
+      <label class="md-nav__title" for="nav-3">
         About
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -370,7 +479,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Writingparadigm/" title="Writing Paradigm" class="md-nav__link">
+    <a href="../writing_paradigm/" title="Writing Paradigm" class="md-nav__link">
       Writing Paradigm
     </a>
   </li>
@@ -560,10 +669,11 @@
                 
                 
                 <h1 id="_1">可以支持的元素<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>本文档支持markdown拓展功能，可以使用诸如：数学公式、语法高亮，高亮标注等等原生markdown不支持的功能。</p>
+<p>本文档支持markdown拓展功能，可以使用诸如：数学公式、语法高亮，高亮标注等等原生markdown不支持的功能。有关更多拓展功能的详细描述可以参考<a href="https://squidfunk.github.io/mkdocs-material/extensions/admonition/">模板网站</a>，在这里我们只是列举了一些可能比较常用的元素以便参考。</p>
 <h2 id="_2">代码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">插入代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<p>可以方便的在网页中插入代码，并且可以指定不同语言的语法高亮，如以下代码可以插入Python语言的代码块。
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>``` python
@@ -579,7 +689,8 @@ import torch.nn as nn
 </pre></div>
 </td></tr></table></p>
 <h3 id="_4">代码特定行高亮<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<p>有时候为了更加直观的进行展示，你可以指定代码块中进行高亮的行，如下所示。
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
@@ -651,7 +762,7 @@ baz | baz  | baz
 </tbody>
 </table>
 <h2 id="_6">数学公式<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>文档支持使用Latex进行数学公式的编辑</p>
+<p>文档支持使用Latex进行数学公式的编辑。</p>
 <p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$$
@@ -669,7 +780,8 @@ $$
 </script>
 </div>
 <h2 id="admonition">Admonition<a class="headerlink" href="#admonition" title="Permanent link">&para;</a></h2>
-<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<p>为了更加突出的展示显著信息，你可以使用Admonition，我们规定了两种比较常用的形式；分别是“Why”：用来描述/解释实验/代码的现象、“Ref”：用来介绍你所引用的参考文献。它们的实现方式如下所示。
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>!!! info &quot;Ref&quot;
     [Massive Exploration of Neural Machine Translation Architectures](https://arxiv.org/abs/1703.03906), Denny Britz, Anna Goldie et al.
 </pre></div>
@@ -710,7 +822,7 @@ $$
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Writingparadigm/" title="Writing Paradigm" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../writing_paradigm/" title="Writing Paradigm" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
