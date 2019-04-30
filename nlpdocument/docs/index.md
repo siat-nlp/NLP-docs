@@ -5,11 +5,6 @@ This repository aims to keep track of some practical and theoretical tricks in n
 
 ## Data prepossessing
 
-
-<br />
-<br />
-<br />
-<br />
 ## Network architecture
 ### **Seq2Seq**
 Some tricks to train RNN and seq2seq models:
@@ -40,11 +35,6 @@ By training in an unsupervised way a network to predict the next character of a 
     [Learning to Generate Reviews and Discovering Sentiment](https://arxiv.org/abs/1704.01444), Ilya Sutskever et al.
 
 
-
-<br />
-<br />
-<br />
-<br />
 ## Parameters
 ### Learning rate
 The learning rate can be usually initialized as 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1(3x growing up). A strategy used to select the hyperparameters is to randomly sample them (uniformly or logscale) and see the testing error after a few epoch.
@@ -52,10 +42,6 @@ The learning rate can be usually initialized as 0.0001, 0.0003, 0.001, 0.003, 0.
 ### Beam size
 Usually set from 2 to 10. The larger beam size, the higher computational cost.
 
-<br />
-<br />
-<br />
-<br />
 ## Regularization
 ### Dropout
 To make Dropout works with RNN, it should only be applied on non-recurrent connections (between layers among a same timestep) [1]. Some more recent paper propose some tricks to make dropout works for recurrent connections[2].
@@ -79,10 +65,6 @@ adding a new normalization layer. Some additional tricks for accelerating BN Net
 
 
 
-<br />
-<br />
-<br />
-<br />
 ## Reinforcement learning
 ### Asynchronous
 Train simultaneously multiple agents with different exploration policies (e.g., E-greedy with different values of epsilon) improve the robustness. 
