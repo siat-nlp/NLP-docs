@@ -10,12 +10,12 @@ nav:
     - DL Framework Programming: dl_framework.md
     - Useful Tutorials: tutorial.md
   - Baselines:
+    - Question Answering: baselines/question_answering.md
     - Answer Selection: baselines/answer_selection.md
     - Aspect Sentiment Analysis: baselines/aspect.md
     - Dialogue: baselines/dialogue.md
     - Summarization: baselines/summarization.md
     - Captioning: baselines/captioning.md
-    - Question Answering: baselines/question_answering.md
   - About:
     - Writing Tutorial: helper/index.md
     - Writing Paradigm: helper/writing_paradigm.md
