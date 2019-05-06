@@ -68,7 +68,8 @@ Define your own inputs and outputs according to the task.
         # copy your model file to the running docker (change the docker ID and your model path)
         $ sudo docker cp /data/huangweiyi/qaModel/code/kaaqa/runs/model 6d7d70e27ecc:/online_qa_model
 
-Note: You need to create different version of your model for tensorflow-serving (refer to https://stackoverflow.com/questions/45544928/tensorflow-serving-no-versions-of-servable-model-found-under-base-path)
+!!! Note
+    You need to create different version of your model for tensorflow-serving (refer to         https://stackoverflow.com/questions/45544928/tensorflow-serving-no-versions-of-servable-model-found-under-base-path)
 
             
         ### deploy your model in the running docker
@@ -109,8 +110,12 @@ Note: You need to create different version of your model for tensorflow-serving 
                 score = np.array(result_future.result().outputs['output'].float_val)[1]
 
 Modify "feature_dict" according to your input variables. The variable "score" is the model output for your request instance. For more details, please refer to http://210.75.252.89:3000/hweiyi/aiLawAssistant/src/branch/master/ranking/client.py for all the codes.
-> **Ref**: A detailed illustration of saving model for tensorflow-serving (https://zhuanlan.zhihu.com/p/40226973)
 
-> **Ref**: Documents of tensorflow-serving (https://bookdown.org/leovan/TensorFlow-Learning-Notes/4-5-deploy-tensorflow-serving.html#using-tensorflow-serving-via-docker--docker--tensorflow-serving)
+!!! info "Ref"
+    A detailed illustration of saving model for tensorflow-serving (https://zhuanlan.zhihu.com/p/40226973)
 
-> **Ref**: An officail example (https://github.com/tensorflow/serving/tree/master/tensorflow_serving/example)
+!!! info "Ref"
+    Documents of tensorflow-serving (https://bookdown.org/leovan/TensorFlow-Learning-Notes/4-5-deploy-tensorflow-serving.html#using-tensorflow-serving-via-docker--docker--tensorflow-serving)
+
+!!! info "Ref"
+    An officail example (https://github.com/tensorflow/serving/tree/master/tensorflow_serving/example)
