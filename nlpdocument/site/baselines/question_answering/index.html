@@ -104,6 +104,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#question-answering" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -216,7 +220,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../answer_selection/" title="Baselines" class="md-tabs__link md-tabs__link--active">
+        <a href="./" title="Baselines" class="md-tabs__link md-tabs__link--active">
           Baselines
         </a>
       
@@ -365,6 +369,63 @@
           
           
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Question Answering
+      </label>
+    
+    <a href="./" title="Question Answering" class="md-nav__link md-nav__link--active">
+      Question Answering
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#knowledge-base-question-answering" title="Knowledge Base Question Answering" class="md-nav__link">
+    Knowledge Base Question Answering
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answer-selection" title="Answer Selection" class="md-nav__link">
+    Answer Selection
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
     <a href="../answer_selection/" title="Answer Selection" class="md-nav__link">
@@ -418,25 +479,6 @@
     <a href="../captioning/" title="Captioning" class="md-nav__link">
       Captioning
     </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Question Answering" class="md-nav__link md-nav__link--active">
-      Question Answering
-    </a>
-    
   </li>
 
         
@@ -512,6 +554,44 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#knowledge-base-question-answering" title="Knowledge Base Question Answering" class="md-nav__link">
+    Knowledge Base Question Answering
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answer-selection" title="Answer Selection" class="md-nav__link">
+    Answer Selection
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -520,9 +600,754 @@
                   <a href="https://github.com/siat-nlp/NLP-DL-Tricks/tree/edit/nlpdocument/docs/baselines/question_answering.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Question Answering</h1>
-                
-                
+                <h1 id="question-answering">Question Answering<a class="headerlink" href="#question-answering" title="Permanent link">&para;</a></h1>
+<h2 id="knowledge-base-question-answering">Knowledge Base Question Answering<a class="headerlink" href="#knowledge-base-question-answering" title="Permanent link">&para;</a></h2>
+<h2 id="answer-selection">Answer Selection<a class="headerlink" href="#answer-selection" title="Permanent link">&para;</a></h2>
+<p>Note: For Answer Selection, sequence length is an important parameter to be tuned.</p>
+<table>
+<thead>
+<tr>
+<th>paper</th>
+<th>authors</th>
+<th>year</th>
+<th>TrecQA (TRAIN-ALL): MAP</th>
+<th>TrecQA (TRAIN-ALL): MRR</th>
+<th>TrecQA (clean): MAP</th>
+<th>TrecQA (clean): MRR</th>
+<th>TrecQA (TRAIN): MAP</th>
+<th>TrecQA (TRAIN): MRR</th>
+<th>WikiQA: MAP</th>
+<th>WikiQA: MRR</th>
+<th>InsuranceQA-test1: P@1</th>
+<th>InsuranceQA-test2: P@1</th>
+<th>SemEval-cQA: MAP</th>
+<th>SemEval-cQA: MRR</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A Long Short-Term Memory Model for Answer Sentence Selection in Question Answering</td>
+<td>Di Wang and Eric Nyberg</td>
+<td>2015</td>
+<td>0.7134</td>
+<td>0.7913</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Learning to rank short text pairs with convolutional deep neural networks</td>
+<td>Aliaksei Severyn</td>
+<td>2015</td>
+<td>0.7459</td>
+<td>0.8078</td>
+<td></td>
+<td></td>
+<td>0.7329</td>
+<td>0.7962</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Wikiqa:Achallenge dataset for open-domain question answering</td>
+<td>Yi Yang</td>
+<td>2015</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.652</td>
+<td>0.6652</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Abcnn: Attention-based convolutional neural network for modeling sentence pairs</td>
+<td>Wenpeng Yin, Hinrich Sch¨ utze</td>
+<td>2016</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.6921</td>
+<td>0.7108</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/yinwenpeng/Answer_Selection">https://github.com/yinwenpeng/Answer_Selection</a></td>
+</tr>
+<tr>
+<td>aNMM : Ranking Short Answer Texts with Attention-Based Neural Matching Model</td>
+<td>Liu Yang1 Qingyao Ai1 Jiafeng Guo2 W. Bruce Croft</td>
+<td>2016</td>
+<td>0.7495</td>
+<td>0.8109</td>
+<td></td>
+<td></td>
+<td>0.7417</td>
+<td>0.8102</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Attentive pooling networks</td>
+<td>Cicero dos Santos</td>
+<td>2016</td>
+<td></td>
+<td></td>
+<td>0.753</td>
+<td>0.8511</td>
+<td></td>
+<td></td>
+<td>0.6886</td>
+<td>0.6957</td>
+<td>0.717</td>
+<td>0.664</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Convolutional Neural Networks vs . Convolution Kernels : Feature Engineering for Answer Sentence Reranking</td>
+<td>Kateryna Tymoshenko† and Daniele Bonadiman† and Alessandro Moschitti</td>
+<td>2016</td>
+<td></td>
+<td></td>
+<td>0.7518</td>
+<td>0.8553</td>
+<td></td>
+<td></td>
+<td>0.7417</td>
+<td>0.7588</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Employing External Rich Knowledge for Machine Comprehension</td>
+<td>BingningWang, Shangmin Guo, Kang Liu, Shizhu He, Jun Zhao</td>
+<td>2016</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.6936</td>
+<td>0.7094</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Improved Representation Learning for Question Answer Matching</td>
+<td>Ming Tan, Cicero dos Santos, Bing Xiang &amp; Bowen Zhou</td>
+<td>2016</td>
+<td></td>
+<td></td>
+<td>0.753</td>
+<td>0.83</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.69</td>
+<td>0.648</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Inner attention based recurrent neural networks for answer selection</td>
+<td>BingningWang, Kang Liu, Jun Zhao</td>
+<td>2016</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.7369</td>
+<td>0.8208</td>
+<td>0.7341</td>
+<td>0.7418</td>
+<td>0.7011</td>
+<td>0.6514</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LSTM-based Deep Learning Models for non-factoid answer selection</td>
+<td>Ming Tan, Cicero dos Santos, Bing Xiang &amp; Bowen Zhou</td>
+<td>2016</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.7279</td>
+<td><strong>0.824</strong></td>
+<td></td>
+<td></td>
+<td>0.681</td>
+<td>0.633</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Modeling relational information in question-answer pairs with convolutional neural networks</td>
+<td>Aliaksei Severyn</td>
+<td>2016</td>
+<td>0.7654</td>
+<td>0.8186</td>
+<td></td>
+<td></td>
+<td>0.7325</td>
+<td>0.8018</td>
+<td>0.6951</td>
+<td>0.7107</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Neural variational inference for text processing</td>
+<td>Yishu Miao</td>
+<td>2016</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.6886</td>
+<td>0.7069</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Noise-contrastive estimation for answer selection with deep neural networks</td>
+<td>Jinfeng Rao1 , Hua He1 , and Jimmy Lin</td>
+<td>2016</td>
+<td>0.78</td>
+<td>0.834</td>
+<td>0.801</td>
+<td>0.877</td>
+<td></td>
+<td></td>
+<td>0.709</td>
+<td>0.723</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/Jeffyrao/pairwise-neural-network">https://github.com/Jeffyrao/pairwise-neural-network</a></td>
+</tr>
+<tr>
+<td>Pairwise word interaction modeling with deep neural networks for semantic similarity measurement</td>
+<td>Hua He1 and Jimmy Lin</td>
+<td>2016</td>
+<td>0.7588</td>
+<td>0.8219</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.709</td>
+<td>0.7234</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sentence similarity learning by lexical decomposition and composition</td>
+<td>ZhiguoWang and Haitao Mi and Abraham Ittycheriah</td>
+<td>2016</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.7058</td>
+<td>0.7226</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>A compare aggregate model for matching text sequences</td>
+<td>ShuohangWang</td>
+<td>2017</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.7433</td>
+<td>0.7545</td>
+<td><strong>0.756</strong></td>
+<td><strong>0.734</strong></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/shuohangwang/SeqMatchSeq">https://github.com/shuohangwang/SeqMatchSeq</a></td>
+</tr>
+<tr>
+<td>A compare aggregate model with dynamic-clip attention for answer selection</td>
+<td>Weijie Bian, Si Li, Zhao Yang, Guang Chen, Zhiqing Lin</td>
+<td>2017</td>
+<td></td>
+<td></td>
+<td>0.821</td>
+<td>0.899</td>
+<td></td>
+<td></td>
+<td>0.754</td>
+<td>0.764</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/wjbianjason/Dynamic-Clip-Attention">https://github.com/wjbianjason/Dynamic-Clip-Attention</a></td>
+</tr>
+<tr>
+<td>A Hybrid Framework for Text Modeling with Convolutional RNN</td>
+<td>ChenglongWang, Feijun Jiang, Hongxia Yang</td>
+<td>2017</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.7427</td>
+<td>0.7504</td>
+<td>0.714</td>
+<td>0.683</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Bilateral multi-perspective matching for natural language sentences</td>
+<td>ZhiguoWang,Wael Hamza, Radu Florian</td>
+<td>2017</td>
+<td></td>
+<td></td>
+<td>0.802</td>
+<td>0.875</td>
+<td></td>
+<td></td>
+<td>0.718</td>
+<td>0.731</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/zhiguowang/BiMPM">https://github.com/zhiguowang/BiMPM</a></td>
+</tr>
+<tr>
+<td>Enhancing Recurrent Neural Networks with Positional Attention for Question Answering</td>
+<td>Qin Chen1, Qinmin Hu1, Jimmy Xiangji Huang2, Liang He1,3 andWeijie An</td>
+<td>2017</td>
+<td></td>
+<td></td>
+<td>0.7814</td>
+<td>0.8513</td>
+<td></td>
+<td></td>
+<td>0.7212</td>
+<td>0.7312</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Inter-weighted alignment network for sentence pair modeling</td>
+<td>Gehui Shen Yunlun Yang Zhi-Hong Deng</td>
+<td>2017</td>
+<td></td>
+<td></td>
+<td>0.822</td>
+<td>0.889</td>
+<td></td>
+<td></td>
+<td>0.733</td>
+<td>0.75</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Learning to Rank Question Answer Pairs with Holographic Dual LSTM Architecture</td>
+<td>Yi Tay1, Luu Anh Tuan2, and Siu Cheung Hui3</td>
+<td>2017</td>
+<td>0.7499</td>
+<td>0.8153</td>
+<td></td>
+<td></td>
+<td>0.752</td>
+<td>0.8146</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>On the Benefit of Incorporating External Features in a Neural Architecture for Answer Sentence Selection</td>
+<td>Ruey-Cheng Chen, Evi Yulianti, Mark Sanderson,W. Bruce Croſt</td>
+<td>2017</td>
+<td>0.782</td>
+<td>0.837</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.701</td>
+<td>0.718</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Ranking Kernels for Structures and Embeddings : A Hybrid Preference and Classification Model</td>
+<td>Kateryna Tymoshenko† and Daniele Bonadiman† and Alessandro Moschitti</td>
+<td>2017</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.7219</td>
+<td>0.7408</td>
+<td></td>
+<td></td>
+<td>0.771</td>
+<td>0.8345</td>
+<td><a href="https://github.com/iKernels/RelTextRank">https://github.com/iKernels/RelTextRank</a></td>
+</tr>
+<tr>
+<td>A Multi-View Fusion Neural Network for Answer Selection</td>
+<td>Lei Sha,∗ Xiaodong Zhang,∗ Feng Qian, Baobao Chang, Zhifang Sui</td>
+<td>2018</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.7462</td>
+<td>0.7576</td>
+<td></td>
+<td></td>
+<td><strong>0.8005</strong></td>
+<td><strong>0.8718</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>CA-RNN : Using Context-Aligned Recurrent Neural Networks for Modeling Sentence Similarity</td>
+<td>Qin Chen,1 Qinmin Hu,1 Jimmy Xiangji Huang,2 Liang He</td>
+<td>2018</td>
+<td></td>
+<td></td>
+<td>0.8227</td>
+<td>0.8886</td>
+<td></td>
+<td></td>
+<td>0.7358</td>
+<td>0.745</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CAN : Enhancing Sentence Similarity Modeling with Collaborative and Adversarial Network</td>
+<td>Qin Chen1, Qinmin Hu, Jimmy Xiangji Huang3 and Liang He</td>
+<td>2018</td>
+<td></td>
+<td></td>
+<td>0.841</td>
+<td>0.9168</td>
+<td></td>
+<td></td>
+<td>0.7303</td>
+<td>0.7431</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Co-Stack Residual Affinity Networks with Multi-level Attention Refinement for Matching Text Sequences</td>
+<td>Yi Tay1, Luu Anh Tuan2, and Siu Cheung Hui3</td>
+<td>2018</td>
+<td></td>
+<td></td>
+<td><strong>0.854</strong></td>
+<td><strong>0.935</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Context-Aware Answer Sentence Selection With Hierarchical Gated Recurrent Neural Networks</td>
+<td>Chuanqi Tan , FuruWei, Qingyu Zhou, Nan Yang, Bowen Du ,Weifeng Lv, and Ming Zhou</td>
+<td>2018</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>0.7638</strong></td>
+<td><strong>0.7825</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cross Temporal Recurrent Networks for Ranking Question Answer Pairs</td>
+<td>Yi Tay1, Luu Anh Tuan2, and Siu Cheung Hui3</td>
+<td>2018</td>
+<td>0.7712</td>
+<td>0.8384</td>
+<td></td>
+<td></td>
+<td><strong>0.7582</strong></td>
+<td>0.8233</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>End-to-End Quantum-like Language Models with Application to Question Answering</td>
+<td>Peng Zhang1,∗, Jiabin Niu1, Zhan Su1, BenyouWang2, Liqun Ma3, Dawei Song</td>
+<td>2018</td>
+<td>0.7589</td>
+<td>0.8254</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.6496</td>
+<td>0.6594</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Hermitian Co-Attention Networks for Text Matching in Asymmetrical Domains</td>
+<td>Yi Tay1, Anh Tuan Luu2, Siu Cheung Hui</td>
+<td>2018</td>
+<td></td>
+<td></td>
+<td>0.784</td>
+<td>0.895</td>
+<td></td>
+<td></td>
+<td>0.743</td>
+<td>0.756</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Hyperbolic representation learning for fast and efficient neural question answering</td>
+<td>Yi Tay1, Luu Anh Tuan2, and Siu Cheung Hui3</td>
+<td>2018</td>
+<td>0.77</td>
+<td>0.825</td>
+<td>0.784</td>
+<td>0.865</td>
+<td></td>
+<td></td>
+<td>0.712</td>
+<td>0.727</td>
+<td></td>
+<td></td>
+<td>0.795</td>
+<td>null</td>
+<td><a href="https://github.com/vanzytay/WSDM2018_HyperQA">https://github.com/vanzytay/WSDM2018_HyperQA</a></td>
+</tr>
+<tr>
+<td>Knowledge as A Bridge: Improving Cross-domain Answer Selection with External Knowledge</td>
+<td>Yang Deng1, Ying Shen1,∗, Min Yang2, Yaliang Li3, Nan Du3,Wei Fan3, Kai Lei1</td>
+<td>2018</td>
+<td>0.797</td>
+<td>0.85</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Knowledge-aware Attentive Neural Network for Ranking Question Answer Pairs</td>
+<td>Ying Shen1, Yang Deng1, Min Yang2, Yaliang Li3, Nan Du3,Wei Fan3, Kai Lei</td>
+<td>2018</td>
+<td>0.7921</td>
+<td>0.8444</td>
+<td>0.8038</td>
+<td>0.8846</td>
+<td></td>
+<td></td>
+<td>0.7323</td>
+<td>0.7494</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Multihop Attention Networks for Question Answer Matching</td>
+<td>Nam Khanh Tran, Claudia Niederée</td>
+<td>2018</td>
+<td></td>
+<td></td>
+<td>0.813</td>
+<td>0.893</td>
+<td></td>
+<td></td>
+<td>0.722</td>
+<td>0.738</td>
+<td>0.705</td>
+<td>0.669</td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/namkhanhtran/nn4nqa">https://github.com/namkhanhtran/nn4nqa</a></td>
+</tr>
+<tr>
+<td>Recurrently Controlled Recurrent Networks</td>
+<td>Yi Tay1, Luu Anh Tuan2, and Siu Cheung Hui3</td>
+<td>2018</td>
+<td></td>
+<td></td>
+<td>0.779</td>
+<td>0.882</td>
+<td></td>
+<td></td>
+<td>0.724</td>
+<td>0.737</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/vanzytay/NIPS2018_RCRN">https://github.com/vanzytay/NIPS2018_RCRN</a></td>
+</tr>
+<tr>
+<td>Self-Training for Jointly Learning to Ask and Answer Questions</td>
+<td>Mrinmaya Sachan</td>
+<td>2018</td>
+<td><strong>0.798</strong></td>
+<td><strong>0.854</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.754</td>
+<td>0.753</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Semantic Linking in Convolutional Neural Networks for Answer Sentence Selection</td>
+<td>Massimo Nicosia∗ and Alessandro Moschitti†</td>
+<td>2018</td>
+<td></td>
+<td></td>
+<td>0.7793</td>
+<td>0.8489</td>
+<td></td>
+<td></td>
+<td>0.7224</td>
+<td>0.7391</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
@@ -543,7 +1368,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../captioning/" title="Captioning" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../tutorial/" title="Useful Tutorials" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -552,19 +1377,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Captioning
+                Useful Tutorials
               </span>
             </div>
           </a>
         
         
-          <a href="../../helper/" title="Writing Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../answer_selection/" title="Answer Selection" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Writing Tutorial
+                Answer Selection
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
