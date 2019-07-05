@@ -14,6 +14,35 @@ Usually, we create a helper ```saver = tf.train.Saver()``` to save and restore t
 !!! info "Ref"
     More details are in this [tutorial](https://cv-tricks.com/tensorflow-tutorial/save-restore-tensorflow-models-quick-complete-tutorial/).
 
+### Multi-graph / Multi-session
+Sometimes we need to build more than one tensorflow graph, e.g., we need to transfer the outputs of one model into another model for further training, then we usually build 2 different graphs, each represents a model. It should be noted that all the operations of each model must be specified under its corresponding graph. A simple example is illustrated as follows:
+```
+# define one graph named 'kbqa_graph'
+kbqa_graph = tf.Graph()
+with kbqa_graph.as_default():
+    kbqa_model = KbqaModel(**kbqa_model_config)
+    kbqa_saver = tf.train.Saver()
+
+# define one session named 'kbqa_sess' for loading pre-trained KBQA model
+kbqa_sess = tf.Session(config=config, graph=kbqa_graph)
+model_path = '%s/model_best/best.model' % args.model_dir
+kbqa_saver.restore(kbqa_sess, save_path=model_path)
+
+# define another graph named 'main_graph' and the session 'main_sess'
+main_graph = tf.Graph()
+with main_graph.as_default():
+    main_model = MainModel(**model_config)
+    main_server = tf.train.Server(max_to_keep=5)
+main_sess = tf.Session(config=config, graph=main_graph)
+
+...
+
+# note: the operations of 'main_model' should be specified under the 'main_graph' domain
+with main_graph.as_default():
+    main_sess.run(tf.global_variables_initializer())
+    main_model.set_vocabs(sess, word_vocab, kd_vocab)
+```
+
 
 ## Programming in PyTorch
 ### CUDA out of memory
