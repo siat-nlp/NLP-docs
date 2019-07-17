@@ -12,7 +12,7 @@ Do remember that carefully checking all the data is the most important prelimina
 
 ### Data chunking
 If the data is too large so that it cannot be loaded into the memory at once, we need to chunk the data at this time. Concretely, we split the whole data into certain number of chunk files and store on disk, then maintain a queue for reading chunk files into memory. The dequeue operation takes out certain number of chunk data for building data batches, the enqueue operation reads chunk files into memory one by one from disk to keep the queue full. Here, we provide a class ```DataBatcher``` as a possible implementation:
-```
+``` python
 # -*- coding: utf-8 -*-
 import numpy as np
 import pickle
@@ -116,7 +116,7 @@ class DataBatcher(object):
 
 
 ## Network architecture
-### **Seq2Seq**
+### Seq2Seq
 Some tricks to train RNN and seq2seq models:
 
 * Embedding size: 1024 or 512. Lower dimensionality like 256 can also lead to good performances. Higher does not necessarily lead to better performances.
@@ -137,8 +137,8 @@ For seq2seq, reverse the order of the input sequence (\['I', 'am', 'hungry'\] be
 !!! info "Ref"
     [Sequence to Sequence Learning with Neural Networks](https://arxiv.org/abs/1409.3215), Ilya Sutskever et al.
 
-<br />
-### **Char-RNN** 
+
+### Char-RNN
 By training in an unsupervised way a network to predict the next character of a text (char-RNN), the network will learn a representation which can then be used for a supervised task (here sentiment analysis).
 
 !!! info "Ref"
