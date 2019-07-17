@@ -16,7 +16,7 @@ Usually, we create a helper ```saver = tf.train.Saver()``` to save and restore t
 
 ### Multi-graph / Multi-session
 Sometimes we need to build more than one tensorflow graph, e.g., we need to transfer the outputs of one model into another model for further training, then we usually build 2 different graphs, each represents a model. It should be noted that all the operations of each model must be specified under its corresponding graph. A simple example is illustrated as follows:
-```
+``` python
 # define one graph named 'kbqa_graph'
 kbqa_graph = tf.Graph()
 with kbqa_graph.as_default():
@@ -68,7 +68,7 @@ saver.save(session, checkpoint_prefix, global_step=current_step)
 tf.train.write_graph(sess.graph.as_graph_def(), checkpoint_prefix, "graph"+str(nn)+".pb", as_text=False)
 ```
 For tensorflow serving, we save like,
-```
+``` python
 ### define input&output signature
 signature = tf.saved_model.signature_def_utils.build_signature_def(
 inputs={
@@ -114,7 +114,7 @@ $ tensorflow_model_server --port=8500 --model_name=qa --model_base_path=/online_
 
 **Request the server for prediction results**
 
-```
+``` python
 hostport = '172.17.0.2:8500'
 channel = grpc.insecure_channel(hostport)
 stub = prediction_service_pb2_grpc.PredictionServiceStub(channel)
